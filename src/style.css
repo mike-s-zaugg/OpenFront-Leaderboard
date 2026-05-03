@@ -52,7 +52,19 @@
 
 body {
   margin: 0;
-  background-color: var(--bg);
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("/src/assets/images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  filter: brightness(0.6);
 }
 
 h1,
@@ -226,7 +238,7 @@ code {
   margin: 32px 0 0;
 
   .logo {
-    height: 18px;
+    max-width: 100px;
   }
 
   a {
@@ -314,11 +326,11 @@ code {
 }
 
 header {
-  display: flex;
+  background: #2c2e30;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
-  padding: 16px;
+  padding: 5px;
 }
 
 header ul {
@@ -332,9 +344,15 @@ ul li {
   margin: 0;
   padding: 0;
   display: inline-block;
+  align-items: center;
+  margin: auto;
 }
 
 ul li a{
   color: var(--text);
   text-decoration: none;
+}
+
+.logo {
+  max-width: 300px;
 }
